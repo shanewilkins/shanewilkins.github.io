@@ -1250,7 +1250,7 @@ MARKDOWN_EXTENSIONS = ['markdown.extensions.fenced_code',
 # Extra things you want in the pages HEAD tag. This will be added right
 # before </head>
 # (translatable)
-# EXTRA_HEAD_DATA = ""
+# EXTRA_HEAD_DATA = "<script src="https: // cdn.plot.ly/plotly-latest.min.js"></script>"
 # Google Analytics or whatever else you use. Added to the bottom of <body>
 # in the default template (base.tmpl).
 # (translatable)
