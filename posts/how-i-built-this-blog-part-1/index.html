@@ -2,6 +2,7 @@
 <html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="description" content="Installing Nikola, setting everything up, making a test post, and pushing everything to GitHub pages">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>How I Built This Blog (Part 1) | Shane's Blog</title>
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
@@ -13,15 +14,14 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="../../rss.xml">
 <link rel="canonical" href="https://shanewilkins.github.io/posts/how-i-built-this-blog-part-1/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script><script>requirejs.config({paths: { 'plotly': ['https://cdn.plot.ly/plotly-latest.min']},});if(!window.Plotly) {{require(['plotly'],function(plotly) {window.Plotly=plotly;});}}</script><meta name="author" content="Shane M. Wilkins">
-<link rel="prev" href="../test-post/" title="Test Post!" type="text/html">
-<link rel="next" href="../how-i-built-this-blog-part-2/" title="How I built this blog (Part 2)" type="text/html">
+<link rel="prev" href="../how-i-built-this-blog-part-0/" title="How I Built This Blog (Part 0)" type="text/html">
+<link rel="next" href="../founding-the-firm-part-1/" title="Founding the Firm Part 1" type="text/html">
 <meta property="og:site_name" content="Shane's Blog">
 <meta property="og:title" content="How I Built This Blog (Part 1)">
 <meta property="og:url" content="https://shanewilkins.github.io/posts/how-i-built-this-blog-part-1/">
-<meta property="og:description" content="I intend to use this blog to post some of my personal data science projects and to work out some of my ideas.
-The primary goal is to keep myself writing code and building a portfolio of data science p">
+<meta property="og:description" content="Installing Nikola, setting everything up, making a test post, and pushing everything to GitHub pages">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2020-12-20T14:15:02-06:00">
+<meta property="article:published_time" content="2020-12-20T14:39:36-06:00">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -87,7 +87,7 @@ The primary goal is to keep myself writing code and building a portfolio of data
             </span></p>
             <p class="dateline">
             <a href="." rel="bookmark">
-            <time class="published dt-published" datetime="2020-12-20T14:15:02-06:00" itemprop="datePublished" title="2020-12-20 14:15">2020-12-20 14:15</time></a>
+            <time class="published dt-published" datetime="2020-12-20T14:39:36-06:00" itemprop="datePublished" title="2020-12-20 14:39">2020-12-20 14:39</time></a>
             </p>
             
         <p class="sourceline"><a href="index.ipynb" class="sourcelink">Source</a></p>
@@ -96,40 +96,132 @@ The primary goal is to keep myself writing code and building a portfolio of data
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div class="cell border-box-sizing text_cell rendered">
+    <div>
+<div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>I intend to use this blog to post some of my personal data science projects and to work out some of my ideas.
-The primary goal is to keep myself writing code and building a portfolio of data science projects, but hopefully others will find something useful to read here as well.</p>
-<p>As my first series of posts, I'm going to write about the project of creating the blog itself.</p>
-<p>Let's begin by defining our requirements and then we can look to see what technologies we might adopt to fulfill these requirements.</p>
-<ul>
-<li>The first and most important requirement is that we want a python-based blogging platform easy to use. We want to spend our time writing content, not twiddling with configuration files or so on. Some additional features that would be nice to have in our blogging platform would be<ul>
-<li>the ability for readers to leave comments or subscribe to future posts,</li>
-<li>use custom themes for styling the appearance, and</li>
-<li>ability to support LaTeX-style mathematics, preferably with <a href="https://katex.org">KaTeX</a>
-</li>
-</ul>
-</li>
-<li>Second, we want to be able to keep all of our source code and other content in version control to ensure we have good offsite backups and to give us flexibility to move to a different platform in the future if our requirements change. I use <a href="www.github.com">git</a> for my version control, so I'd like to be able to publish content to the site via git.</li>
-<li>Third, we'd really like to be able to write our content in <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> files and post <a href="https://jupyter.org">Jupyter Notebooks</a> so that we can share code and visualizations as well as written text.</li>
-<li>Fourth, we'd like to have our own domain name.</li>
-<li>Fifth, we'd like to do all this as cheaply as possible ...</li>
-</ul>
-<p>In the next installment, we'll use these sketchily defined requirements to go fishing for neat new tech to use to build our blog.</p>
+<h3 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">¶</a>
+</h3>
+<p>In the last post, we defined our technical requirements and (after some exploration) settled on Nikola as the platform for the blog. 
+In this installment, we'll create an environment, install Nikola, get everything set up, build our first post, and then push the whole thing to GitHub pages.</p>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Step-1----Creating-the-Repository">Step 1 -- Creating the Repository<a class="anchor-link" href="#Step-1----Creating-the-Repository">¶</a>
+</h3>
+<p>I'm assuming that you already have a good version of <a href="https://www.python.org/downloads/"><code>python 3</code></a> and <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git"><code>git</code> installed</a> and that you already have an account on <a href="https://github.com">github</a></p>
+<ol>
+<li>Log in to github and create a new repository named <code>&lt;yourUsername&gt;.github.io</code> where <code>&lt;yourUsername&gt;</code> is your username.<ul>
+<li>Choose a .gitignore for python, and a license if you want.</li>
+</ul>
+</li>
+<li>Now you'll need to <a href="https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository">clone this new repository</a> to the local machine where you'll be working. <ul>
+<li>On a mac, I did this with <code>git clone git@github.com:shanewilkins/shanewilkins.github.io.git</code> from the directory <em>above</em> where I wanted the new project folder <code>shanewilkins.io.git</code> to live.</li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Step-2----Creating-a-Python-Environment">Step 2 -- Creating a Python Environment<a class="anchor-link" href="#Step-2----Creating-a-Python-Environment">¶</a>
+</h3>
+<ol>
+<li>Navigate to the new project folder <code>cd &lt;yourUsername&gt;.github.io</code>
+</li>
+<li>Create a virtual environment for our project with <code>virtualenv venv</code> which should create a new subfolder called <code>venv</code> in the project folder.</li>
+<li>Activate the virtual environment with <code>source venv/bin/activate</code>. You should see <code>(venv)</code> to the left of your command prompt.<ul>
+<li>You can do <code>python --version</code> or <code>which python</code> to make sure that the active version of python is the right version from the virtual environment.</li>
+</ul>
+</li>
+<li>Update the installed versions of the "seed" packages <code>python -m pip install -U pip setuptools wheel</code>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Step-3----Installing-Nikola-and-Initializing-a-Site">Step 3 -- Installing Nikola and Initializing a Site<a class="anchor-link" href="#Step-3----Installing-Nikola-and-Initializing-a-Site">¶</a>
+</h3>
+<ol>
+<li>Now we install <code>Nikola</code> with <code>pip install "nikola[extras]"</code>. This will take a couple of minutes. Since Nikola supports Jupyter out of the box, Nikola has to depend on all of Jupyter's numerous dependencies too.</li>
+<li>Once we have Nikola installed, we are ready to start the blog! All we have to do is <code>nikola init</code> and Nikola will start an interactive prompt to guide us through some setup questions. (Don't worry about choosing the wrong thing--you can change all of these settings later in <code>conf.py</code>.)</li>
+<li>
+<p>Open <code>conf.py</code> and make sure of three things:</p>
+<ul>
+<li>
+<code>SITE_URL = "https://&lt;yourUsername&gt;.github.io"</code>, </li>
+<li>
+<code>GITHUB_DEPLOY_BRANCH = 'main'</code> (not <code>master</code>), and</li>
+<li>
+<code>POSTS</code> can find <code>.ipynb</code> with </li>
+</ul>
+</li>
+</ol>
+<pre><code>POSTS = (
+    ...
+    ("posts/*.ipynb", "posts", "post.tmpl")
+)</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Step-4----Writing-the-First-Post">Step 4 -- Writing the First Post<a class="anchor-link" href="#Step-4----Writing-the-First-Post">¶</a>
+</h3>
+<ol>
+<li>Now to create your first post (which will be a Jupyter notebook) do <code>nikola new_post -f ipynb</code> and tell the prompt what you'd like the name of this post to be. (<strong><em>Note.</em></strong> all the <code>new_post</code> command is really doing is populating notebook metadata, which you can edit later from inside Jupyter with <code>Edit&gt;Edit Notebook Metadata</code>
+</li>
+<li>Now fire up the notebook with <code>jupyter notebook</code>, and you should find your new post in the <code>posts</code> directory.</li>
+<li>Write your post! :)</li>
+<li>Save the post and close Jupyter.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Step-5----Publish-to-Github-Pages">Step 5 -- Publish to Github Pages<a class="anchor-link" href="#Step-5----Publish-to-Github-Pages">¶</a>
+</h3>
+<ol>
+<li>From the commandline in your main project folder now you can simply do <code>nikola github_deploy</code> and Nikola will automagically build the site, commit changes, and push to the remote repository.</li>
+<li>Go get a cup of coffee.</li>
+<li>Now navigate in your browser of choice to <code>https://&lt;yourUsername&gt;.github.io</code> and, if all has gone well, you should see your brand new blog appear, courtesy of github pages.</li>
+</ol>
+</div>
 </div>
 </div>
 </div>
     </div>
     <aside class="postpromonav"><nav><ul class="pager hidden-print">
 <li class="previous">
-                <a href="../test-post/" rel="prev" title="Test Post!">Previous post</a>
+                <a href="../how-i-built-this-blog-part-0/" rel="prev" title="How I Built This Blog (Part 0)">Previous post</a>
             </li>
             <li class="next">
-                <a href="../how-i-built-this-blog-part-2/" rel="next" title="How I built this blog (Part 2)">Next post</a>
+                <a href="../founding-the-firm-part-1/" rel="next" title="Founding the Firm Part 1">Next post</a>
             </li>
         </ul></nav></aside><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML" integrity="sha384-3lJUsx1TJHt7BA4udB5KPnDrlkO8T6J6v/op7ui0BbCjvZ9WqV4Xm6DTP6kQ/iBH" crossorigin="anonymous"></script><script type="text/x-mathjax-config">
         MathJax.Hub.Config({tex2jax: {inlineMath: [['$latex ','$'], ['\\(','\\)']]}});
