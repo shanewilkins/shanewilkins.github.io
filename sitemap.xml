@@ -7,15 +7,19 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://shanewilkins.github.io/</loc>
-  <lastmod>2020-12-20T19:43:00Z</lastmod>
+  <lastmod>2021-01-18T15:46:00Z</lastmod>
  </url>
  <url>
   <loc>https://shanewilkins.github.io/2020/</loc>
   <lastmod>2020-12-20T19:43:00Z</lastmod>
  </url>
  <url>
+  <loc>https://shanewilkins.github.io/2021/</loc>
+  <lastmod>2021-01-18T15:46:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://shanewilkins.github.io/archive.html</loc>
-  <lastmod>2020-12-21T18:05:00Z</lastmod>
+  <lastmod>2021-01-18T15:46:00Z</lastmod>
  </url>
  <url>
   <loc>https://shanewilkins.github.io/categories/</loc>
@@ -30,6 +34,10 @@
   <lastmod>2020-12-20T16:34:00Z</lastmod>
  </url>
  <url>
+  <loc>https://shanewilkins.github.io/posts/business-plan/</loc>
+  <lastmod>2021-01-18T15:46:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://shanewilkins.github.io/posts/founding-the-firm-part-1/</loc>
   <lastmod>2020-12-21T18:05:00Z</lastmod>
  </url>
@@ -39,10 +47,6 @@
  </url>
  <url>
   <loc>https://shanewilkins.github.io/posts/how-i-built-this-blog-part-1/</loc>
-  <lastmod>2020-12-20T20:27:00Z</lastmod>
- </url>
- <url>
-  <loc>https://shanewilkins.github.io/posts/how-i-built-this-blog-part-2/</loc>
   <lastmod>2020-12-20T20:27:00Z</lastmod>
  </url>
  <url>
