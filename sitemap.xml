@@ -23,7 +23,11 @@
  </url>
  <url>
   <loc>https://shanewilkins.github.io/categories/</loc>
-  <lastmod>2020-12-20T16:34:00Z</lastmod>
+  <lastmod>2021-02-07T17:43:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://shanewilkins.github.io/categories/data-science/</loc>
+  <lastmod>2021-02-07T17:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://shanewilkins.github.io/galleries/</loc>
@@ -38,16 +42,12 @@
   <lastmod>2021-01-18T19:11:00Z</lastmod>
  </url>
  <url>
-  <loc>https://shanewilkins.github.io/posts/comparing-stock-market-performance-by-presidential-administration/</loc>
-  <lastmod>2021-01-22T15:05:00Z</lastmod>
+  <loc>https://shanewilkins.github.io/posts/data-science-cookbook-01/</loc>
+  <lastmod>2021-02-07T17:43:00Z</lastmod>
  </url>
  <url>
   <loc>https://shanewilkins.github.io/posts/founding-the-firm-part-0/</loc>
   <lastmod>2021-01-24T22:45:00Z</lastmod>
- </url>
- <url>
-  <loc>https://shanewilkins.github.io/posts/founding-the-firm-part-1/</loc>
-  <lastmod>2020-12-21T18:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://shanewilkins.github.io/posts/how-i-built-this-blog-part-0/</loc>
@@ -56,9 +56,5 @@
  <url>
   <loc>https://shanewilkins.github.io/posts/how-i-built-this-blog-part-1/</loc>
   <lastmod>2020-12-20T20:27:00Z</lastmod>
- </url>
- <url>
-  <loc>https://shanewilkins.github.io/posts/test-post/</loc>
-  <lastmod>2020-12-20T19:43:00Z</lastmod>
  </url>
 </urlset>
